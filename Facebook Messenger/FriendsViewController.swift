@@ -98,9 +98,18 @@ class FriendsViewCell : UICollectionViewCell {
     //Create timeLabel
     let timeLabel : UILabel = {
         let label = UILabel()
-        label.text = "12:06"
+        label.text = "12:06 pm"
         label.font = UIFont.systemFont(ofSize: 18)
         return label
+    }()
+    
+    //Create hasReadImageView
+    let hasReadImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        return imageView
     }()
     
     func setupViewCell(){
@@ -115,6 +124,7 @@ class FriendsViewCell : UICollectionViewCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        hasReadImageView.translatesAutoresizingMaskIntoConstraints = false
         
         profileImageView.image = UIImage(named: "Mark_Z")
         profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: (frame.height / 2) - 34).isActive = true
@@ -128,7 +138,7 @@ class FriendsViewCell : UICollectionViewCell {
         dividerLineView.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
         
         containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 90).isActive = true
-        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: (frame.height / 2) + 20 ).isActive = true
         
@@ -139,12 +149,17 @@ class FriendsViewCell : UICollectionViewCell {
         containerView.addSubview(messageLabel)
         messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
         messageLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
-        messageLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 10).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -40).isActive = true
         
         containerView.addSubview(timeLabel)
         timeLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
         timeLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -10).isActive = true
         
-        
+        hasReadImageView.image = UIImage(named: "Mark_Z")
+        containerView.addSubview(hasReadImageView)
+        hasReadImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 40).isActive = true
+        hasReadImageView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -10).isActive = true
+        hasReadImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        hasReadImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
 }
