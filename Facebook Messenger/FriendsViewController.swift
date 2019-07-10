@@ -78,6 +78,20 @@ class FriendsViewCell : UICollectionViewCell {
         return containerview
     }()
     
+    //Create a User name Label
+    let nameLabel : UILabel = {
+       let label = UILabel()
+        label.text = "Friend name"
+        return label
+    }()
+    
+    //Create Message Lable
+    let messageLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Your friends Message and something else"
+        return label
+    }()
+    
     func setupViewCell(){
         backgroundColor = UIColor.cyan
         addSubview(profileImageView)
@@ -87,6 +101,8 @@ class FriendsViewCell : UICollectionViewCell {
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         dividerLineView.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
         profileImageView.image = UIImage(named: "Mark_Z")
         profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: (frame.height / 2) - 34).isActive = true
@@ -103,5 +119,14 @@ class FriendsViewCell : UICollectionViewCell {
         containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: (frame.height / 2) + 20 ).isActive = true
+        
+        containerView.addSubview(nameLabel)
+        nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
+        
+        containerView.addSubview(messageLabel)
+        messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
+        messageLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
+        
     }
 }
