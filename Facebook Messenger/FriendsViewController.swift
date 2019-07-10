@@ -8,19 +8,45 @@
 
 import UIKit
 
+class Friend : NSObject {
+    var name : String?
+    var profileImageName : String?
+}
+
+class Message : NSObject {
+    var text : String?
+    var date : Date?
+    var friend : Friend?
+}
+
 class FriendsViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
     private let cellId = "CellId"
+    var messagesArray : [Message]?
+    
+    func setupData(){
+        
+        let mark = Friend()
+        mark.name = "Mark Zuckerberg"
+        mark.profileImageName = "Mark_Z"
+    
+        let message = Message()
+        message.friend = mark
+        message.text = "Hello My name is Mark ! its nice to meet you"
+        message.date = Date()
+        messagesArray = [message]
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Recent"
+        setupData()
         
+        navigationItem.title = "Recent"
         collectionView.backgroundColor = .white
         collectionView.alwaysBounceVertical = true
-        
-        collectionView.register(FriendsViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MessageCell.self, forCellWithReuseIdentifier: cellId)
         
         //Set a Logout BarButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handlelogout))
@@ -30,14 +56,23 @@ class FriendsViewController: UICollectionViewController , UICollectionViewDelega
         }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if let count = messagesArray?.count {
+            return count
+        } else {
+            return 0
+        }
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FriendsViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MessageCell
+        cell.messageLabel.text = messagesArray![indexPath.item].text
+        cell.nameLabel.text = messagesArray?[indexPath.item].friend?.name
+        
+        let format = DateFormatter()
+        format.dateFormat = "h:mm a"
+        cell.timeLabel.text = format.string(from: (messagesArray?[indexPath.item].date)! )
         return cell
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width , height: 100)
@@ -46,7 +81,7 @@ class FriendsViewController: UICollectionViewController , UICollectionViewDelega
 }
 
 //MARK: - CollectionViewCell Class
-class FriendsViewCell : UICollectionViewCell {
+class MessageCell : UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCell()
