@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		ED04EDCC22D4FAE9000EB1A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04EDCB22D4FAE9000EB1A2 /* AppDelegate.swift */; };
-		ED04EDCE22D4FAE9000EB1A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04EDCD22D4FAE9000EB1A2 /* ViewController.swift */; };
-		ED04EDD122D4FAE9000EB1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED04EDCF22D4FAE9000EB1A2 /* Main.storyboard */; };
 		ED04EDD422D4FAE9000EB1A2 /* Facebook_Messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED04EDD222D4FAE9000EB1A2 /* Facebook_Messenger.xcdatamodeld */; };
 		ED04EDD622D4FAEA000EB1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED04EDD522D4FAEA000EB1A2 /* Assets.xcassets */; };
 		ED04EDD922D4FAEA000EB1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED04EDD722D4FAEA000EB1A2 /* LaunchScreen.storyboard */; };
+		ED04EDE522D527E3000EB1A2 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04EDE422D527E3000EB1A2 /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED04EDC822D4FAE9000EB1A2 /* Facebook Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED04EDCB22D4FAE9000EB1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED04EDCD22D4FAE9000EB1A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ED04EDD022D4FAE9000EB1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED04EDD322D4FAE9000EB1A2 /* Facebook_Messenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Facebook_Messenger.xcdatamodel; sourceTree = "<group>"; };
 		ED04EDD522D4FAEA000EB1A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED04EDD822D4FAEA000EB1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED04EDDA22D4FAEA000EB1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED04EDE422D527E3000EB1A2 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				ED04EDCB22D4FAE9000EB1A2 /* AppDelegate.swift */,
-				ED04EDCD22D4FAE9000EB1A2 /* ViewController.swift */,
-				ED04EDCF22D4FAE9000EB1A2 /* Main.storyboard */,
+				ED04EDE422D527E3000EB1A2 /* FriendsViewController.swift */,
 				ED04EDD522D4FAEA000EB1A2 /* Assets.xcassets */,
 				ED04EDD722D4FAEA000EB1A2 /* LaunchScreen.storyboard */,
 				ED04EDDA22D4FAEA000EB1A2 /* Info.plist */,
@@ -127,7 +124,6 @@
 			files = (
 				ED04EDD922D4FAEA000EB1A2 /* LaunchScreen.storyboard in Resources */,
 				ED04EDD622D4FAEA000EB1A2 /* Assets.xcassets in Resources */,
-				ED04EDD122D4FAE9000EB1A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +134,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED04EDCE22D4FAE9000EB1A2 /* ViewController.swift in Sources */,
 				ED04EDD422D4FAE9000EB1A2 /* Facebook_Messenger.xcdatamodeld in Sources */,
 				ED04EDCC22D4FAE9000EB1A2 /* AppDelegate.swift in Sources */,
+				ED04EDE522D527E3000EB1A2 /* FriendsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ED04EDCF22D4FAE9000EB1A2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED04EDD022D4FAE9000EB1A2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ED04EDD722D4FAEA000EB1A2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
