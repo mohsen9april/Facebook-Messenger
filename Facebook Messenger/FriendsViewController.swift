@@ -71,15 +71,25 @@ class FriendsViewCell : UICollectionViewCell {
         return view
     }()
     
+    //Create ContainerView
+    let containerView :  UIView = {
+       let containerview = UIView()
+        containerview.backgroundColor = .red
+        return containerview
+    }()
+    
     func setupViewCell(){
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cyan
         addSubview(profileImageView)
         addSubview(dividerLineView)
+        addSubview(containerView)
         
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         dividerLineView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
         profileImageView.image = UIImage(named: "Mark_Z")
-        profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: 15).isActive = true
+        profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: (frame.height / 2) - 34).isActive = true
         profileImageView.leftAnchor.constraint(equalTo: leftAnchor,constant: 15).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 68).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 68).isActive = true
@@ -89,6 +99,9 @@ class FriendsViewCell : UICollectionViewCell {
         dividerLineView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
         dividerLineView.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
         
-
+        containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 100).isActive = true
+        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
+        containerView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: (frame.height / 2) + 20 ).isActive = true
     }
 }
