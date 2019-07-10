@@ -8,14 +8,16 @@
 
 import UIKit
 
-class FriendsViewController: UICollectionViewController {
+class FriendsViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
     private let cellId = "CellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .white
+        collectionView.alwaysBounceVertical = true
+        
         collectionView.register(FriendsViewCell.self, forCellWithReuseIdentifier: cellId)
         
         //Set a Logout BarButton
@@ -33,6 +35,12 @@ class FriendsViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FriendsViewCell
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width , height: 100)
+    }
+    
 }
 
 //MARK: - CollectionViewCell Class
