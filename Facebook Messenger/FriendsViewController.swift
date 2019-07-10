@@ -53,7 +53,27 @@ class FriendsViewCell : UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //Create ImageView in Cell
+    let profileImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
+    }()
+    
     func setupViewCell(){
         backgroundColor = UIColor.blue
+        addSubview(profileImageView)
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        profileImageView.image = UIImage(named: "Mark_Z")
+        
+        profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: 10).isActive = true
+        profileImageView.leftAnchor.constraint(equalTo: leftAnchor,constant: 10).isActive = true
+        //profileImageView.rightAnchor.constraint(equalTo: rightAnchor,constant: 0).isActive = true
+        //profileImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        
+        profileImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
     }
 }
