@@ -15,6 +15,8 @@ class FriendsViewController: UICollectionViewController , UICollectionViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Recent"
+        
         collectionView.backgroundColor = .white
         collectionView.alwaysBounceVertical = true
         
@@ -57,23 +59,36 @@ class FriendsViewCell : UICollectionViewCell {
     let profileImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        
+        imageView.layer.cornerRadius = 34
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
+    //Create Divider
+    let dividerLineView : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        return view
+    }()
+    
     func setupViewCell(){
-        backgroundColor = UIColor.blue
+        backgroundColor = UIColor.white
         addSubview(profileImageView)
+        addSubview(dividerLineView)
+        
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        dividerLineView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.image = UIImage(named: "Mark_Z")
+        profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: 15).isActive = true
+        profileImageView.leftAnchor.constraint(equalTo: leftAnchor,constant: 15).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 68).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 68).isActive = true
         
-        profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: 10).isActive = true
-        profileImageView.leftAnchor.constraint(equalTo: leftAnchor,constant: 10).isActive = true
-        //profileImageView.rightAnchor.constraint(equalTo: rightAnchor,constant: 0).isActive = true
-        //profileImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        dividerLineView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        dividerLineView.leftAnchor.constraint(equalTo: leftAnchor, constant: 80).isActive = true
+        dividerLineView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
+        dividerLineView.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
         
-        profileImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 
     }
 }
