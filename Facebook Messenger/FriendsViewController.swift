@@ -74,26 +74,37 @@ class FriendsViewCell : UICollectionViewCell {
     //Create ContainerView
     let containerView :  UIView = {
        let containerview = UIView()
-        containerview.backgroundColor = .red
+        containerview.backgroundColor = .white
         return containerview
     }()
     
-    //Create a User name Label
+    //Create a Username Label
     let nameLabel : UILabel = {
        let label = UILabel()
         label.text = "Friend name"
+        label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
     //Create Message Lable
     let messageLabel : UILabel = {
         let label = UILabel()
-        label.text = "Your friends Message and something else"
+        label.text = "Your friends Message and something else...."
+        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
+    }()
+    
+    //Create timeLabel
+    let timeLabel : UILabel = {
+        let label = UILabel()
+        label.text = "12:06"
+        label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
     func setupViewCell(){
-        backgroundColor = UIColor.cyan
+        backgroundColor = UIColor.white
         addSubview(profileImageView)
         addSubview(dividerLineView)
         addSubview(containerView)
@@ -103,6 +114,7 @@ class FriendsViewCell : UICollectionViewCell {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         profileImageView.image = UIImage(named: "Mark_Z")
         profileImageView.topAnchor.constraint(equalTo: topAnchor,constant: (frame.height / 2) - 34).isActive = true
@@ -115,8 +127,8 @@ class FriendsViewCell : UICollectionViewCell {
         dividerLineView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
         dividerLineView.heightAnchor.constraint(equalToConstant: 0.8).isActive = true
         
-        containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 100).isActive = true
-        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
+        containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 90).isActive = true
+        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
         containerView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: (frame.height / 2) + 20 ).isActive = true
         
@@ -127,6 +139,12 @@ class FriendsViewCell : UICollectionViewCell {
         containerView.addSubview(messageLabel)
         messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10).isActive = true
         messageLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 10).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: 10).isActive = true
+        
+        containerView.addSubview(timeLabel)
+        timeLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10).isActive = true
+        timeLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -10).isActive = true
+        
         
     }
 }
