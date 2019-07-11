@@ -42,10 +42,19 @@ extension FriendsViewController {
         messageSteve.friend = steve
         messageSteve.text = "Hello My name is Steve jobs ! its nice to meet you"
         messageSteve.date = Date()
+
         
-    
+        let bill = Friend()
+        bill.name = "Bill Gates"
+        bill.profileImageName = "Mark_Z"
         
-        messagesArray = [message , messageSteve ]
+        let messageBill = Message()
+        messageBill.friend = bill
+        messageBill.text = "Hello My name is Bill Gates ! its nice to meet you"
+        messageBill.date = Date()
+        
+        
+        messagesArray = [message , messageSteve , messageBill ]
         
     }
 
