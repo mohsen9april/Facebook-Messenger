@@ -18,3 +18,37 @@ class Message : NSObject {
     var date : Date?
     var friend : Friend?
 }
+
+
+extension FriendsViewController {
+    
+    
+    func setupData(){
+        
+        let mark = Friend()
+        mark.name = "Mark Zuckerberg"
+        mark.profileImageName = "Mark_Z"
+        
+        let message = Message()
+        message.friend = mark
+        message.text = "Hello My name is Mark ! its nice to meet you"
+        message.date = Date()
+        
+        let steve = Friend()
+        steve.name = "Steve Jobs"
+        steve.profileImageName = "Mark_Z"
+        
+        let messageSteve = Message()
+        messageSteve.friend = steve
+        messageSteve.text = "Hello My name is Steve jobs ! its nice to meet you"
+        messageSteve.date = Date()
+        
+    
+        
+        messagesArray = [message , messageSteve ]
+        
+    }
+
+    
+    
+}

@@ -13,20 +13,6 @@ class FriendsViewController: UICollectionViewController , UICollectionViewDelega
     
     private let cellId = "CellId"
     var messagesArray : [Message]?
-    
-    func setupData(){
-        
-        let mark = Friend()
-        mark.name = "Mark Zuckerberg"
-        mark.profileImageName = "Mark_Z"
-    
-        let message = Message()
-        message.friend = mark
-        message.text = "Hello My name is Mark ! its nice to meet you"
-        message.date = Date()
-        messagesArray = [message]
-        
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
