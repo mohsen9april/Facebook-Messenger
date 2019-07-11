@@ -12,6 +12,7 @@
 		ED04EDD622D4FAEA000EB1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED04EDD522D4FAEA000EB1A2 /* Assets.xcassets */; };
 		ED04EDD922D4FAEA000EB1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED04EDD722D4FAEA000EB1A2 /* LaunchScreen.storyboard */; };
 		ED04EDE522D527E3000EB1A2 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04EDE422D527E3000EB1A2 /* FriendsViewController.swift */; };
+		ED461E1322D7100700337D5D /* FriendsViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED461E1222D7100700337D5D /* FriendsViewControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		ED04EDD822D4FAEA000EB1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED04EDDA22D4FAEA000EB1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED04EDE422D527E3000EB1A2 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		ED461E1222D7100700337D5D /* FriendsViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewControllerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				ED04EDCB22D4FAE9000EB1A2 /* AppDelegate.swift */,
 				ED04EDE422D527E3000EB1A2 /* FriendsViewController.swift */,
+				ED461E1222D7100700337D5D /* FriendsViewControllerHelper.swift */,
 				ED04EDD522D4FAEA000EB1A2 /* Assets.xcassets */,
 				ED04EDD722D4FAEA000EB1A2 /* LaunchScreen.storyboard */,
 				ED04EDDA22D4FAEA000EB1A2 /* Info.plist */,
@@ -136,6 +139,7 @@
 			files = (
 				ED04EDD422D4FAE9000EB1A2 /* Facebook_Messenger.xcdatamodeld in Sources */,
 				ED04EDCC22D4FAE9000EB1A2 /* AppDelegate.swift in Sources */,
+				ED461E1322D7100700337D5D /* FriendsViewControllerHelper.swift in Sources */,
 				ED04EDE522D527E3000EB1A2 /* FriendsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
